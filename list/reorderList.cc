@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stack>
 
 using namespace std;
 
@@ -10,6 +11,7 @@ struct ListNode {
 
 class Solution {
 public:
+/**
     void reorderList(ListNode* head) {
         if (!head || !(head->next) || !(head->next->next))
         {
@@ -38,6 +40,34 @@ public:
             head->next->next = next;
             head = next;
         }
+    }
+**/
+    void reorderList(ListNode* head) {
+        if (!head || !(head->next) || !(head->next->next))
+        {
+            return;
+        }
+        stack<ListNode*> st;
+        ListNode *p = head;
+        // 入栈
+        while (p)
+        {
+            st.push(p);
+            p = p->next;
+        }
+        // 后半段出栈并插入链表
+        int num = (st.size() - 1) / 2;
+        ListNode *h = head;
+        while (num)
+        {
+            ListNode *t = st.top();
+            st.pop();
+            --num;
+            t->next = h->next;
+            h->next = t;
+            h = t->next;
+        }
+        st.top()->next = NULL;
     }
 };
 int main()
