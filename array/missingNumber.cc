@@ -7,8 +7,8 @@ class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         // 先加再减
-        // 位运算
 
+        // 位运算
         int res = nums.size();
         for (int i = 0; i < nums.size(); ++i)
         {
