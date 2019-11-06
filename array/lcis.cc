@@ -15,7 +15,7 @@ public:
             if (i == 0 || nums[i] > nums[i-1])
             {
                 ++count;
-                // 如果这句放在else中会判断不出连续递增的数组
+                // 如果这句放在else中会判断不出连续递增到结尾的数组
                 res = max(res, count);
             }
             else
