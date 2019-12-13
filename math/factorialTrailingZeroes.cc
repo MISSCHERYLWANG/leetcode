@@ -7,16 +7,11 @@ class Solution
 public:
     int trailingZeroes(int n)
     {
-        long long facto = 1, res = 0;
-        for (int i = 1; i <= n; ++i)
+        int res = 0, tmp = n;
+        while (tmp / 5)
         {
-            facto *= i;
-            while (facto % 10 == 0)
-            {
-                ++res;
-                facto /= 10;
-            }
-            facto %= 10;
+            res += tmp / 5;
+            tmp /= 5;
         }
         return res;
     }
