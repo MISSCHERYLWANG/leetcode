@@ -9,6 +9,7 @@ struct ListNode {
 
 class Solution {
 public:
+/** my version
     bool isPalindrome(ListNode* head) {
         std::vector<int> temp;
         ListNode *p = head;
@@ -24,6 +25,11 @@ public:
             }
         }
         return true;
+    }
+**/
+/** space: o(1) **/
+    bool isPalindrome(ListNode* head) {
+        
     }
 };
 
